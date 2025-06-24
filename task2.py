@@ -11,7 +11,7 @@ cursor_img = cv2.imread(CURSOR_PATH, cv2.IMREAD_UNCHANGED)
 def overlay_cursor(background, cursor, x, y):
     """ამატებს კურსორის PNGს სქრინზე შესაბამის პოზიციაზე (სკეილინგით)"""
     ch, cw = cursor.shape[:2]
-    for c in range(0, 3):  # RGB არხებზე
+    for c in range(0, 3): 
         background[y:y+ch, x:x+cw, c] = (
             cursor[:, :, c] * (cursor[:, :, 3] / 255.0) +
             background[y:y+ch, x:x+cw, c] * (1.0 - cursor[:, :, 3] / 255.0)
